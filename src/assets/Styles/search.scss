@@ -1,0 +1,111 @@
+@import "variables";
+
+.container {
+    width: 100%;
+    background: url('../images/search_background.jpeg');
+    height: 35.125rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    @include breakpoint-down(small){
+        height: 15.375rem;
+    }
+    &__section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        height: 35.125rem;
+        line-height: 3.125rem;
+        @include breakpoint-down(small){
+            height: 15.375rem;
+        }
+    }
+    span {
+        color :#fff;
+    }
+    &__title {
+        font-weight: 700;
+        font-size: 2.25em;
+        word-wrap: break-word;
+        @include breakpoint-up(xlarge){
+            width: 60rem;
+        }
+        @include breakpoint-down(medium){
+            font-size: 1.375em;
+            line-height: 1.5rem;
+            padding: 1rem;
+        }
+    }
+    &__text {
+        font-size: 1.125rem;
+        font-weight: 500;
+        line-height: 4rem;
+        @include breakpoint-down(medium){
+            font-size: 1em;
+            line-height: 1.5rem;
+        }
+    }
+    &__search {
+        // width: 59.625rem;
+        display: none;
+        @include breakpoint-up(medium){
+            display: block;
+        }    
+        &.active{
+            display: none;
+            @include breakpoint-down(small){
+                display: block;
+                text-align: center;
+            }    
+        }
+        select, button {
+            height: 4rem;
+            cursor: pointer;
+        }
+        select:first-child{
+            border-radius: 6px 0px 0px 6px;
+        }
+        input, select {
+            background-color: #fff;
+            width: 18rem;
+            height: 4rem;
+            border: none;
+            outline: none;
+            font-weight: 500;
+            color: rgba(70, 67, 67, 0.73);
+            padding: 0 0.625rem 0 1.875rem;
+            @include breakpoint-down(small){
+                border: 1px solid rgba(0, 0, 0, 0.08);
+                height: 2.25rem;
+                margin-top: 15px;
+                width: 90%;
+            }
+        }
+        input{
+            width: 13.25rem;
+            @include breakpoint-down(small){
+                width: 90%;
+            }
+        }
+        button{
+            background: $search_button;
+            border: none;
+            width: 4.75rem;
+            border-radius: 0 6px 6px 0;
+            @include breakpoint-down(small){
+                margin-top: 15px;
+                border-radius: 6px;
+                width: 4rem;
+                height: 3.2rem;
+            }
+            img{
+                @include breakpoint-down(small){
+                    width: 25px;
+                }
+                width: 10px;
+            }
+        }
+    }
+}

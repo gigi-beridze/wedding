@@ -1,0 +1,28 @@
+@import "variables";
+
+.packages{
+    width: 100%;
+    height: 46.375rem;
+    @include breakpoint-down(small){
+       height: 30rem;
+    }
+    &__cards{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding-top: 1.5rem;
+    }
+    &__middle_card {
+        @include breakpoint-down(small){
+            display: none;
+        }
+        img{
+            height: 100%;
+        }
+        .card__text{
+            border-radius: 0px;
+            bottom: 18.5rem;
+        }
+    }
+}
